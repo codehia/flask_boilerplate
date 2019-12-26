@@ -1,5 +1,7 @@
-from .blueprint_todo import todo
+from .add_todo_restful import TodoSimple
+from flask_restful import Api
 
 
-def register_blueprints(app):
-    app.register_blueprint(todo, url_prefix="/todo")
+def add_resources(app):
+    api = Api(app)
+    api.add_resource(TodoSimple, '/')

@@ -8,7 +8,7 @@ def add_new_todo(data):
         todo_item=data['todo']
     )
     save_changes(todo)
-    response_object = jsonify({"response": "successfully added todo"})
+    response_object = {"response": "successfully added todo"}
     return response_object, 200
 
 

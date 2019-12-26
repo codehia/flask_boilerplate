@@ -4,7 +4,7 @@ import unittest
 from flask_migrate import Migrate, MigrateCommand
 from flask_script import Manager
 from app.main import create_app, db
-from app.main.routes import register_blueprints
+from app.main.routes import add_resources
 
 
 app = create_app(os.getenv('FLASK_ENV') or 'dev')
@@ -16,7 +16,7 @@ manager.add_command('db', MigrateCommand)
 
 @manager.command
 def run():
-    register_blueprints(app)
+    add_resources(app)
     app.run()
 
 # TODO: Add test
